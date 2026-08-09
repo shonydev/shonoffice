@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ShonOffice.Infra.Pdf</RootNamespace>
+  </PropertyGroup>
+
+  <!--
+    Managed (pure .NET) implementation of IPdfEngine — the "C# by default"
+    adapter described in the README's "Nuevo rumbo arquitectónico" section.
+    Rust is no longer assumed for PDF: it only becomes a candidate later,
+    behind this same IPdfEngine port, if a real technical need shows up
+    (performance, memory, a capability the .NET ecosystem lacks). Until
+    then, this project — not a Rust/FFI adapter — is where PDF support
+    belongs.
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShonOffice.Domain\ShonOffice.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

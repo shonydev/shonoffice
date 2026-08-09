@@ -4,10 +4,12 @@ using ShonOffice.Domain.Ports;
 namespace ShonOffice.Application.UseCases;
 
 /// <summary>
-/// Converts a PDF into a Word document. The heavy text extraction is
-/// handled by the Rust engine (<see cref="IPdfEngine"/>, via FFI); this use
-/// case only orchestrates: extract text and rebuild it as a
-/// <see cref="WordDocument"/> before saving it with <see cref="IDocxWriter"/>.
+/// Converts a PDF into a Word document. Text extraction is delegated to
+/// whatever <see cref="IPdfEngine"/> implementation is wired in — a plain
+/// .NET one today, or a Rust engine later if that becomes justified (see
+/// the port's docs); this use case only orchestrates: extract text and
+/// rebuild it as a <see cref="WordDocument"/> before saving it with
+/// <see cref="IDocxWriter"/>.
 /// </summary>
 public sealed class ConvertPdfToWordUseCase
 {

@@ -1,5 +1,5 @@
-# Rust
-/target/
+# Rust (legacy/rust-docx-poc)
+target/
 Cargo.lock
 
 # .NET / C#
