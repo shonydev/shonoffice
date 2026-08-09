@@ -1,0 +1,52 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShonOffice.Domain", "src\ShonOffice.Domain\ShonOffice.Domain.csproj", "{821C6009-0367-4D12-83C7-F0F6A07E69C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShonOffice.Application", "src\ShonOffice.Application\ShonOffice.Application.csproj", "{6A7751B0-7CCE-4B52-A730-1B5B892F457E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShonOffice.Application.Tests", "tests\ShonOffice.Application.Tests\ShonOffice.Application.Tests.csproj", "{8929A34D-6565-4A71-9AC2-A5B1B134C13A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShonOffice.Infra.OpenXml", "src\ShonOffice.Infra.OpenXml\ShonOffice.Infra.OpenXml.csproj", "{F25EC422-6E24-4E13-8C0A-966C1220FF0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShonOffice.UI", "src\ShonOffice.UI\ShonOffice.UI.csproj", "{50BB2B31-B197-478D-A976-FFE0B9682B06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShonOffice.Infra.OpenXml.Tests", "tests\ShonOffice.Infra.OpenXml.Tests\ShonOffice.Infra.OpenXml.Tests.csproj", "{F18CC78E-CAB9-4CF3-A7BA-FE841C9163AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{821C6009-0367-4D12-83C7-F0F6A07E69C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821C6009-0367-4D12-83C7-F0F6A07E69C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821C6009-0367-4D12-83C7-F0F6A07E69C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821C6009-0367-4D12-83C7-F0F6A07E69C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7751B0-7CCE-4B52-A730-1B5B892F457E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7751B0-7CCE-4B52-A730-1B5B892F457E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7751B0-7CCE-4B52-A730-1B5B892F457E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7751B0-7CCE-4B52-A730-1B5B892F457E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8929A34D-6565-4A71-9AC2-A5B1B134C13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8929A34D-6565-4A71-9AC2-A5B1B134C13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8929A34D-6565-4A71-9AC2-A5B1B134C13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8929A34D-6565-4A71-9AC2-A5B1B134C13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25EC422-6E24-4E13-8C0A-966C1220FF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25EC422-6E24-4E13-8C0A-966C1220FF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25EC422-6E24-4E13-8C0A-966C1220FF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25EC422-6E24-4E13-8C0A-966C1220FF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50BB2B31-B197-478D-A976-FFE0B9682B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50BB2B31-B197-478D-A976-FFE0B9682B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50BB2B31-B197-478D-A976-FFE0B9682B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50BB2B31-B197-478D-A976-FFE0B9682B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18CC78E-CAB9-4CF3-A7BA-FE841C9163AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18CC78E-CAB9-4CF3-A7BA-FE841C9163AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18CC78E-CAB9-4CF3-A7BA-FE841C9163AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18CC78E-CAB9-4CF3-A7BA-FE841C9163AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

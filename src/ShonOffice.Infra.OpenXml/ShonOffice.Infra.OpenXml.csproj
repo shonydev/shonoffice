@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ShonOffice.Infra.OpenXml</RootNamespace>
+  </PropertyGroup>
+
+  <!--
+    Adaptador de infraestructura: implementa los puertos del Domain
+    (IDocxReader hoy) usando Open XML SDK, la librería oficial de Microsoft
+    para OOXML. El Domain nunca referencia este proyecto ni Open XML SDK
+    directamente — la dependencia siempre apunta hacia adentro, como marca
+    la arquitectura hexagonal descripta en el README.
+  -->
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShonOffice.Domain\ShonOffice.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

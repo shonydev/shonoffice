@@ -1,0 +1,16 @@
+# Rust
+/target/
+Cargo.lock
+
+# .NET / C#
+bin/
+obj/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# SO
+.DS_Store
+Thumbs.db
