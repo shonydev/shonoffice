@@ -8,9 +8,10 @@
   </PropertyGroup>
 
   <!--
-    Regla de la arquitectura hexagonal: el Domain no depende de nada externo
-    (ni Open XML SDK, ni Avalonia, ni el motor Rust). Solo define el modelo
-    de documento y los puertos (interfaces) que la infraestructura implementa.
+    Hexagonal architecture rule: the Domain doesn't depend on anything
+    external (not Open XML SDK, not Avalonia, not the Rust engine). It only
+    defines the document model and the ports (interfaces) that
+    infrastructure implements.
   -->
 
 </Project>

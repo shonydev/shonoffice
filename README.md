@@ -12,7 +12,7 @@ dotnet build
 dotnet run --project src/ShonOffice.UI
 ```
 
-Esto abre la ventana **"ShonOffice"**. Click en **"📂 Abrir Word..."** 
+Esto abre la ventana **"ShonOffice"**. Click en **"📂 Open Word..."** 
 
 **Requisitos:** [.NET SDK 8](https://dotnet.microsoft.com/download)
 (`dotnet --version` debe mostrar `8.x`). La primera vez necesita conexión
@@ -41,7 +41,11 @@ dotnet build
 dotnet run --project src/ShonOffice.UI
 ```
 
-Abre una ventana con un botón "Abrir Word..."
+Abre una ventana con un botón "Open Word..."
+
+Al abrir un documento, esa barra superior (botón + ruta del archivo) se
+oculta y el título de la ventana pasa a mostrar el nombre del archivo
+abierto, igual que hace Word.
 
 
 ## Arquitectura de lenguajes: C# + Rust vía FFI
@@ -132,7 +136,7 @@ reemplazables alrededor.
                                     │ depende de (interfaces)
                      ┌──────────────▼───────────────┐
    Dominio           │   ShonOffice.Domain           │
-   (núcleo, sin      │   - Documento, Hoja, Slide...  │
+   (núcleo, sin      │   - OfficeDocument, Sheet, Slide...  │
    dependencias      │   - IDocxReader/Writer         │
    externas)         │   - IXlsxReader/Writer         │
                      │   - IPptxReader/Writer         │
@@ -205,15 +209,15 @@ shonoffice/
 ├── ShonOffice.sln
 ├── src/
 │   ├── ShonOffice.Domain/          # C# — modelo de documento + puertos (interfaces). Sin dependencias externas.
-│   │   ├── Documentos/             #   Documento, DocumentoWord, Parrafo, Texto, AlineacionTexto, DocumentoExcel, DocumentoPowerPoint, Hoja, Diapositiva
-│   │   ├── Puertos/                #   IDocxReader/Writer, IXlsxReader/Writer, IPptxReader/Writer, IPdfEngine
-│   │   └── Excepciones/            #   FormatoNoSoportadoException
+│   │   ├── Documents/               #   OfficeDocument, WordDocument, Paragraph, TextRun, ParagraphAlignment, ExcelDocument, PowerPointDocument, Sheet, Slide
+│   │   ├── Ports/                   #   IDocxReader/Writer, IXlsxReader/Writer, IPptxReader/Writer, IPdfEngine
+│   │   └── Exceptions/              #   UnsupportedFormatException
 │   ├── ShonOffice.Application/     # C# — casos de uso, depende solo de Domain
-│   │   └── CasosDeUso/             #   AbrirDocumentoCasoDeUso, GuardarDocumentoCasoDeUso, ConvertirPdfAWordCasoDeUso
+│   │   └── UseCases/                #   OpenDocumentUseCase, SaveDocumentUseCase, ConvertPdfToWordUseCase
 │   ├── ShonOffice.Infra.OpenXml/   # C# — implementa IDocxReader con Open XML SDK
-│   │   ├── LectorWordOpenXml.cs    #   lee .docx resolviendo formato real (no solo texto)
-│   │   ├── ResolutorDeEstilos.cs   #   recorre la cadena de estilos de Word (docDefaults → basedOn → directo)
-│   │   └── AdaptadoresPendientes.cs #  placeholders de IXlsxReader/IPptxReader (todavía no implementados)
+│   │   ├── WordOpenXmlReader.cs    #   lee .docx resolviendo formato real (no solo texto)
+│   │   ├── StyleResolver.cs        #   recorre la cadena de estilos de Word (docDefaults → basedOn → directo)
+│   │   └── PendingAdapters.cs      #   placeholders de IXlsxReader/IPptxReader (todavía no implementados)
 │   ├── ShonOffice.UI/              # C# + Avalonia — primer adaptador de entrada en C# (código, sin .axaml)
 │   │   ├── Program.cs, App.cs      #   arranque de la app Avalonia
 │   │   └── MainWindow.cs           #   abre .docx y lo renderiza con formato real
@@ -245,8 +249,8 @@ externas porque son, justamente, los adaptadores pensados para eso.
 
 ## Próximos pasos sugeridos
 
-2. Extender `Infra.OpenXml` a `.xlsx` y `.pptx` (`LectorExcelNoImplementado`
-   y `LectorPowerPointNoImplementado` son placeholders a propósito para
+2. Extender `Infra.OpenXml` a `.xlsx` y `.pptx` (`NotImplementedExcelReader`
+   y `NotImplementedPowerPointReader` son placeholders a propósito para
    ese paso — hoy solo lanzan `NotImplementedException`).
 3. Recién ahí encarar el FFI: exponer `shonoffice-native` como `cdylib`,
    generar bindings con `csbindgen`, e implementar `IPdfEngine` en

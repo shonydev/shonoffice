@@ -2,7 +2,7 @@
 name = "shonoffice"
 version = "0.1.0"
 edition = "2021"
-description = "ShonOffice - gestor liviano de archivos Office"
+description = "ShonOffice - lightweight Office file manager"
 
 [dependencies]
 docx-rs = { version = "0.4", default-features = false }

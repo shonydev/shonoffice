@@ -1,6 +1,6 @@
 use docx_rs::*;
 
-/// Lee un archivo .docx desde disco y devuelve su texto, un párrafo por línea.
+/// Reads a .docx file from disk and returns its text, one paragraph per line.
 pub fn read_docx_text(bytes: &[u8]) -> Result<Vec<String>, String> {
     let docx = read_docx(bytes).map_err(|e| format!("{:?}", e))?;
 
@@ -18,7 +18,7 @@ pub fn read_docx_text(bytes: &[u8]) -> Result<Vec<String>, String> {
     Ok(paragraphs)
 }
 
-/// Extrae el texto plano de un parrafo, concatenando todos sus "runs".
+/// Extracts the plain text of a paragraph, concatenating all its "runs".
 fn extract_paragraph_text(paragraph: &Paragraph) -> String {
     let mut text = String::new();
 

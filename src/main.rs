@@ -31,7 +31,7 @@ impl ShonOfficeApp {
             .add_filter("Word (*.docx)", &["docx"])
             .pick_file()
         else {
-            return; // el usuario cancelo el dialogo
+            return; // the user cancelled the dialog
         };
 
         match fs::read(&path) {
@@ -41,12 +41,12 @@ impl ShonOfficeApp {
                     self.file_path = Some(path);
                 }
                 Err(e) => {
-                    self.error = Some(format!("No se pudo leer el documento: {}", e));
+                    self.error = Some(format!("Could not read the document: {}", e));
                     self.paragraphs.clear();
                 }
             },
             Err(e) => {
-                self.error = Some(format!("No se pudo abrir el archivo: {}", e));
+                self.error = Some(format!("Could not open the file: {}", e));
                 self.paragraphs.clear();
             }
         }
@@ -58,7 +58,7 @@ impl eframe::App for ShonOfficeApp {
         egui::TopBottomPanel::top("top_bar").show(ctx, |ui| {
             ui.add_space(6.0);
             ui.horizontal(|ui| {
-                if ui.button("📂 Abrir Word...").clicked() {
+                if ui.button("📂 Open Word...").clicked() {
                     self.open_file();
                 }
 
@@ -77,7 +77,7 @@ impl eframe::App for ShonOfficeApp {
 
             if self.paragraphs.is_empty() {
                 ui.centered_and_justified(|ui| {
-                    ui.label("Abre un archivo .docx para ver su contenido.");
+                    ui.label("Open a .docx file to see its content.");
                 });
                 return;
             }

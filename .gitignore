@@ -6,11 +6,11 @@ Cargo.lock
 bin/
 obj/
 
-# Editores
+# Editors
 .vscode/
 .idea/
 *.swp
 
-# SO
+# OS
 .DS_Store
 Thumbs.db

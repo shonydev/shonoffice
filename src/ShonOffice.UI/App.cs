@@ -6,10 +6,10 @@ using AvaloniaApplication = Avalonia.Application;
 namespace ShonOffice.UI;
 
 /// <summary>
-/// Se define todo en C# (sin archivos <c>.axaml</c>) a propósito: evita que
-/// el build dependa del compilador de markup de Avalonia, que no se puede
-/// validar en este entorno sin conexión a NuGet. Funcionalmente es
-/// equivalente a un <c>App.axaml</c> con <c>&lt;FluentTheme/&gt;</c>.
+/// Everything is defined in C# (no <c>.axaml</c> files) on purpose: it
+/// avoids the build depending on Avalonia's markup compiler, which can't be
+/// validated in this environment without a NuGet connection. Functionally
+/// it's equivalent to an <c>App.axaml</c> with <c>&lt;FluentTheme/&gt;</c>.
 /// </summary>
 public sealed class App : AvaloniaApplication
 {
@@ -20,9 +20,9 @@ public sealed class App : AvaloniaApplication
 
     public override void OnFrameworkInitializationCompleted()
     {
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime escritorio)
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            escritorio.MainWindow = new MainWindow();
+            desktop.MainWindow = new MainWindow();
         }
 
         base.OnFrameworkInitializationCompleted();

@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <!--
-    Adaptador de infraestructura: implementa los puertos del Domain
-    (IDocxReader hoy) usando Open XML SDK, la librería oficial de Microsoft
-    para OOXML. El Domain nunca referencia este proyecto ni Open XML SDK
-    directamente — la dependencia siempre apunta hacia adentro, como marca
-    la arquitectura hexagonal descripta en el README.
+    Infrastructure adapter: implements the Domain's ports (IDocxReader
+    today) using Open XML SDK, Microsoft's official library for OOXML. The
+    Domain never references this project or Open XML SDK directly — the
+    dependency always points inward, as required by the hexagonal
+    architecture described in the README.
   -->
 
   <ItemGroup>

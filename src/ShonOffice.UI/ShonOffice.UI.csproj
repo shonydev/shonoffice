@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <!--
-    Primer adaptador de entrada en C# (Avalonia + MVVM-lite en code-behind,
-    sin XAML, para que el build no dependa del compilador de markup). Para
-    .docx, reemplaza a la GUI en Rust/egui (src/main.rs): llama a los mismos
-    casos de uso de ShonOffice.Application y renderiza el formato real que
-    entrega ShonOffice.Infra.OpenXml (negrita, color, tamaño, alineación,
-    encabezados), en vez de solo texto plano.
+    First input adapter in C# (Avalonia + MVVM-lite in code-behind, no
+    XAML, so the build doesn't depend on the markup compiler). For .docx,
+    it replaces the Rust/egui GUI (src/main.rs): it calls the same use
+    cases from ShonOffice.Application and renders the real formatting
+    delivered by ShonOffice.Infra.OpenXml (bold, color, size, alignment,
+    headings), instead of just plain text.
   -->
 
   <ItemGroup>
